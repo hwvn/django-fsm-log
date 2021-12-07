@@ -12,8 +12,23 @@ by enabling a cached backend. See [Advanced Usage](#advanced-usage)
 
 ## Changelog
 
-### unreleased
+### 2.0.2-dev (unreleased)
 
+### 2.0.1 (2020-03-26)
+ - Add support for django3.0
+ - Drop support for python2
+
+### 1.6.2 (2019-01-06)
+
+- Address Migration history breakage added in 1.6.1
+
+### 1.6.1 (2018-12-02)
+
+- Make StateLog.description field nullable
+
+### 1.6.0 (2018-11-14)
+
+- Add source state on transitions
 - Fixed `get_state_display` with FSMIntegerField (#63)
 - Fixed handling of transitions if target is None (#71)
 - Added `fsm_log_description` decorator (#1, #67)
@@ -31,7 +46,7 @@ by enabling a cached backend. See [Advanced Usage](#advanced-usage)
 - Bring compatibility with Django 2.0 and drop support of unsupported versions
   of Django: `1.6`, `1.7`, `1.9`.
 
-### Compatability
+### Compatibility
 
 - Python 2.7 and 3.4+
 - Django 1.8+
@@ -81,7 +96,7 @@ By default transitions get recorded for all models. Logging can be disabled for
 specific models by adding their fully qualified name to `DJANGO_FSM_LOG_IGNORED_MODELS`.
 
 ```python
-DJANGO_FSM_LOG_IGNORED_MODELS = ('poll.models.Vote')
+DJANGO_FSM_LOG_IGNORED_MODELS = ('poll.models.Vote',)
 ```
 
 ### `for_` Manager Method
